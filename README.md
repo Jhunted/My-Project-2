@@ -3,7 +3,7 @@ A description of your game. Background info of the game is a nice touch.
 
 ## Screenshots
 
-#### Wireframs / ERDS
+#### Wireframes / ERDS
 ![Imgur](https://i.imgur.com/f4PcYSu.png)
 ![Imgur](https://i.imgur.com/kmRgyeA.png)
 ![Imgur](https://i.imgur.com/r2Y38Ji.png)

@@ -14,3 +14,5 @@ db.on('connected', function() {
 db.on('error', function(err) {
     console.log('MongoDB has thrown an error: ', err);
 });
+
+module.exports = mongoose;

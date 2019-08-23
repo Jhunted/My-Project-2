@@ -1,3 +1,21 @@
+# Concert Journal
+A description of your game. Background info of the game is a nice touch.
+
+## Screenshots
+
+## Technologies Used
+- JavaScript
+- Node.js
+- Express.js
+- Mongoose.js
+- MongoDB - MongoDB Atlas
+- Passport.js
+- Oauth2.0
+
+
+## Getting Started
+
+
 https://trello.com/b/FopwTLOS/concert-tracker
 ![Imgur](https://i.imgur.com/f4PcYSu.png)
 ![Imgur](https://i.imgur.com/kmRgyeA.png)

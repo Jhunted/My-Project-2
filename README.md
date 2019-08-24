@@ -1,5 +1,5 @@
 # Concert Journal
-A description of your game. Background info of the game is a nice touch.
+
 
 ## Screenshots
 

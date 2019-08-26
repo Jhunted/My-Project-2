@@ -1,8 +1,10 @@
 var router = require('express').Router();
 var usersCtrl = require('../controllers/users');
 
+// you are already /users
+
 // GET /students
-router.get('/users', usersCtrl.index);
+router.get('/', usersCtrl.index);
 
 // POST /facts
 // We will already have access to the logged in student on

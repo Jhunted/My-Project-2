@@ -7,6 +7,7 @@ const concertSchema = new Schema({
         required: true
     },
     date: {
+        type: Date,
         default: function() {
             const date = new Date();
             return date.setFullYear;

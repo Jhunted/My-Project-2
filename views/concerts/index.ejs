@@ -7,9 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        <a href="/concerts/new">Add a New Concert to the List</a>
+    <h1>Heres all the concerts</h1>
+    
+        <a href="/concerts/new">Add a new Concert</a>
         <a href="/">Go Back Home</a>
-    </h1>
+
+        <% concerts.forEach(function(concert, idx) { %>
+            <p>
+                <%= concert.name %> | <%= concert.location %> | 
+                <%= concert.date %> |
+                <a href="/concerts/<%= concert._id %>">Details</a>
+            </p>
+       <% }) %>
+    
 </body>
 </html>

@@ -12,13 +12,14 @@ module.exports = {
 
 function index(req, res) {
     Concert.find({}, function(err, concerts) {
+        console.log(concerts)
         res.render('concerts/index', { concerts });
     });
 }
 
 function show(req, res) {
-    Concert.findById(req.params.id, function(err, concerts) {
-        Ticket.find({ concerts: concert._id }, function(err, concerts) {
+    Concert.findById(req.params.id, function(err, concert) {
+        Ticket.find({ concerts: concert._id }, function(err, tickets) {
             console.log(tickets)
             res.render('concerts/show', {
                 title: 'Concert Detail',
@@ -38,8 +39,12 @@ function create(req, res) {
         req.body[key] === '' && delete req.body[key];
     }
     Concert.create(req.body, function(err, concert) {
-        console.log(concert);
-        res.redirect('/concerts');
+        var concert = new Concert(req.body);
+        concert.save(function(err) {
+            console.log(err)
+            if (err) return res.redirect('concerts/new');
+            res.redirect('/concerts');
+        })
     });
 }
 

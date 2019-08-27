@@ -9,7 +9,6 @@ module.exports = {
     //addLocation
 };
 
-
 function index(req, res) {
     Concert.find({}, function(err, concerts) {
         console.log(concerts)
@@ -39,7 +38,7 @@ function create(req, res) {
         req.body[key] === '' && delete req.body[key];
     }
     Concert.create(req.body, function(err, concert) {
-        var concert = new Concert(req.body);
+        //var concert = new Concert(req.body);
         concert.save(function(err) {
             console.log(err)
             if (err) return res.redirect('concerts/new');

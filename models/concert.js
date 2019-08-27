@@ -8,10 +8,6 @@ const concertSchema = new Schema({
     },
     date: {
         type: Date,
-        // default: function() {
-        //     const date = new Date();
-        //     return date.setFullYear;
-        //}
     },
     location: {
         type: String

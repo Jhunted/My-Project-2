@@ -12,13 +12,22 @@
         <a href="/concerts/new">Add a new Concert</a>
         <a href="/">Go Back Home</a>
 
+        <% if (concerts.length > 0) { %>
         <% concerts.forEach(function(concert, idx) { %>
             <p>
                 <%= concert.name %> | <%= concert.location %> | 
                 <%= concert.date %> |
                 <a href="/concerts/<%= concert._id %>">Details</a>
             </p>
-       <% }) %>
-    
+                <li>
+                    <form action="/concerts/<%=concert._id%>?_method=DELETE" method="POST" class="delete-form">
+                      <button type="submit">X</button>
+                    </form>
+                    <%= concert.done ? 'Gone' : 'Have not Gone' %>
+                </li>
+                    <% }); %>
+                    <% } else { %>
+                    <p>There are no Concerts yet!</p>
+        <% } %>
 </body>
 </html>

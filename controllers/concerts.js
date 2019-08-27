@@ -6,8 +6,19 @@ module.exports = {
     new: newConcert,
     create,
     show,
-    //addLocation
+    delete: deleteConcert,
+    //edit
 };
+
+// function edit (req, res) {
+
+// }
+
+function deleteConcert(req, res) {
+    Concert.findOneAndDelete(req.params.id, () => {
+        res.redirect('/concerts');
+    });
+  }
 
 function index(req, res) {
     Concert.find({}, function(err, concerts) {
@@ -38,7 +49,7 @@ function create(req, res) {
         req.body[key] === '' && delete req.body[key];
     }
     Concert.create(req.body, function(err, concert) {
-        //var concert = new Concert(req.body);
+        //var newConcert = new Concert(req.body);
         concert.save(function(err) {
             console.log(err)
             if (err) return res.redirect('concerts/new');
@@ -47,11 +58,3 @@ function create(req, res) {
     });
 }
 
-// function addLocation(req, res) {
-//     Concert.findById(req.params.id, function(err, concert) {
-//         concert.locations.push(req.body);
-//         concert.save(function(err, concert) {
-//             res.redirect(`/concerts/${concert._id}`);
-//         });
-//     });
-// }

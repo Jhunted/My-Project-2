@@ -8,7 +8,7 @@ var passport = require('passport');
 // });
 
 router.get('/', function(req, res) {
-  res.render('index');
+  res.render('index', {user: req.user});
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -19,7 +19,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/users',
+    successRedirect: '/concerts',
     failureRedirect: '/'
   }
 ));

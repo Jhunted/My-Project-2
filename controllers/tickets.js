@@ -8,7 +8,7 @@ module.exports = {
 
 function newTicket(req, res) {
     Concert.findById(req.params.id, function(err, concert) {
-        res.render('tickets/new', { concert });
+        res.render('tickets', { concert });
     });
 }   
 

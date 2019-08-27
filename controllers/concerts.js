@@ -6,7 +6,7 @@ module.exports = {
     new: newConcert,
     create,
     show,
-    addLocation
+    //addLocation
 };
 
 
@@ -48,11 +48,11 @@ function create(req, res) {
     });
 }
 
-function addLocation(req, res) {
-    Concert.findById(req.params.id, function(err, concert) {
-        concert.locations.push(req.body);
-        concert.save(function(err, concert) {
-            res.redirect(`/concerts/${concert._id}`);
-        });
-    });
-}
+// function addLocation(req, res) {
+//     Concert.findById(req.params.id, function(err, concert) {
+//         concert.locations.push(req.body);
+//         concert.save(function(err, concert) {
+//             res.redirect(`/concerts/${concert._id}`);
+//         });
+//     });
+// }

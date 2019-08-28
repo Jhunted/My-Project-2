@@ -7,8 +7,8 @@ router.get('/new', concertCtlr.new);
 router.post('/', concertCtlr.create);
 router.get('/:id', concertCtlr.show);
 router.delete('/:id', concertCtlr.delete);
-//router.put('/:id/edit', concertCtlr.edit);
-// router.put('/:id', concertCtlr.update);
+router.get('/:id/edit', concertCtlr.edit);
+router.put('/:id', concertCtlr.update);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

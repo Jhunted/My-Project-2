@@ -17,7 +17,10 @@
     <p><%= concert.date %></p>
    
     <h5>Tickets for this Concert</h5>
-    <% tickets.forEach(function(t) { %>
+
+    <% tickets.forEach(function(t, idx) { %>
+        
         <p><%= t.seat %></p>
         <p>$<%= t.price%></p>
+        
     <% }) %>

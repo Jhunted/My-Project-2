@@ -7,23 +7,25 @@ module.exports = {
     create,
     show,
     delete: deleteConcert,
-    // edit,
-    // update
+    edit,
+    update
 };
 
-// function update(req, res) {
-//     req.body.done = !!req.body.done;
-//     Concert.update(req.params.id, req.body);
-//     res.redirect(`/concerts/${req.params.id}`);
-//   }
+function update(req, res) {
+    req.body.done = !!req.body.done;
+    console.log(req.params.id);
+    Concert.findByIdAndUpdate(req.params.id, { done: req.body.done }, {new: true}, function(err){
+        res.redirect(`/concerts`);
+    });
+};
 
-// function edit(req, res) {
-//     var concert = Concert.getOne(req.params.id);
-//     res.render('concerts/:id/edit', {
-//       concert,
-//       concertIdx: req.params.id
-//     });
-//   }
+function edit(req, res) {
+    var concert = Concert.findById(req.params.id);
+    res.render('concerts/edit', {
+      concert,
+      concert_id: req.params.id
+    });
+  }
 
 function deleteConcert(req, res) {
     Concert.findOneAndDelete(req.params.id, () => {
@@ -60,7 +62,6 @@ function create(req, res) {
         req.body[key] === '' && delete req.body[key];
     }
     Concert.create(req.body, function(err, concert) {
-        //var newConcert = new Concert(req.body);
         concert.save(function(err) {
             console.log(err)
             if (err) return res.redirect('concerts/new');

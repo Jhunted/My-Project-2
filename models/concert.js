@@ -11,6 +11,10 @@ const concertSchema = new Schema({
     },
     location: {
         type: String
+    },
+    done: {
+       type: Boolean,
+       default: false, 
     }
 });
 

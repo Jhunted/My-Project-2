@@ -3,8 +3,32 @@ const Concert = require('../models/concert');
 
 module.exports = {
     new: newTicket,
-    create
+    create,
+    edit,
+    update,
+    delete: deleteTicket
 }
+
+function deleteTicket(req, res) {
+    Ticket.findOneAndDelete(req.params.id, () => {
+        res.redirect('/concerts');
+    });
+  }
+
+function update(req, res) {
+    req.body.done = !!req.body.done;
+    Ticket.findOneAndUpdate(req.params.id, req.body);
+    res.redirect(`/concerts/:id/edit${req.params.id}`);
+  }
+
+
+function edit(req, res) {
+    var ticket = Ticket.getOne(req.params.id);
+    res.render('concerts/edit', {
+      ticket,
+      ticket_id: req.params.id
+    });
+  }
 
 function newTicket(req, res) {
     Concert.findById(req.params.id, function(err, concert) {

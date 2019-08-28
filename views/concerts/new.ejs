@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add new concert info below:</h1>
+        <a href="/concerts">Go back to all concerts</a>
+        <a href="/">Go Back Home</a>
+        <hr>
+
+    <form action="/concerts" method="POST" autocomplete="off">
+        <select name="name">
+            <option value="Toyota Music Factory">Toyota Music Factory</option>
+            <option value="Dos Equis Energy Pavilion">Dos Equis Energy Pavilion</option>
+            <option value="Bomb Factory">Bomb Factory</option>
+            <option value="Trees">Trees</option>
+            <option value="Verizon Theater">Verizon Theater</option>
+        </select>
+        <select name="location">
+            <option value="Las Colinas" selected>Las Colinas</option>
+            <option value="Dallas">Dallas</option>
+            <option value="Deep Ellum">Deep Ellum</option>
+            <option value="Grand Prairie">Grand Prairie</option>
+        </select>
+        <input type="datetime-local" name="date">
+        <input type="submit" value="Add New Concert">
+    </form>
+   
+</body>
+</html>

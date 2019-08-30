@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SEI Student Fun Facts</title>
-    <!-- Google Icon Fonts used by Materialize -->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize CSS Framework -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <!-- JavaScript for Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </head>
 
-  <body>
+    <title>Concert Journal</title>
+    
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+
+  </head>
     <body>
-      <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper">
-            <a href="" class="brand-logo left">SEI Student Fun Facts</a>
-            <ul class="right">
+       <h1 class="has-text-centered title is-1 notification is-black">Concert Journal</h1>
+        <nav class=>
+          <div class="block has-text-centered">
+            <div class ="title is-1">
+            <ul>
               <li>
                 <% if (user) { %>
-                    <a href="/logout"><i class="black-text material-icons left">trending_flat</i>Log Out</a>
+                    <a href="/logout" class="button is-danger is-inverted">Log Out</a>
                 <% } else { %>
-                    <a href="/auth/google"><i class="black-text material-icons left">vpn_key</i>Login with Google</a>
+                    <a href="/auth/google" class="button is-primary">Login with Google</a>
                 <% } %>
               </li>
             </ul>
           </div>
+          </div>
         </nav>
-      </div>
   </body>
 </html>

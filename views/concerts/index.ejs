@@ -4,36 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+
+    <title>Concerts</title>
+
 </head>
 <body>
-    <h1>Heres all the concerts</h1>
-
+    <h1 class="has-text-centered title is-1 notification is-black">Here's all the concerts</h1>
+        
+        <nav class="has-text-centered title is-4">
         <a href="/">Go Back Home</a>
+        ---
         <a href="/concerts/new">Add a new Concert</a>
+        ---
+        <a href="/logout">Logout</a>
+        </nav>
         
-
-        
-
+        <div class="columns is-centered is-multiline">
         <% if (concerts.length > 0) { %>
         <% concerts.forEach(function(concert, idx) { %>
+            <div class="block">
+                <div class="notification is-inverted">
             <p>
+                    <form action="/concerts/<%=concert._id%>?_method=DELETE" method="POST" class="delete-form">
+                      <button class="delete" type="submit">X</button>
+                    </form>
                 <%= concert.name %> | <%= concert.location %> | 
                 <%= concert.date %> |
-                <a href="/concerts/<%= concert._id %>">Details</a>
-                <a href="/concerts/<%= concert._id %>/edit">Edit</a>
-                <h3>Complete: <%= concert.done ? 'Yes' : 'Nope' %></h3>
+                <a class="button is-link" href="/concerts/<%= concert._id %>">Details</a>
+                <a class="button is-warning" href="/concerts/<%= concert._id %>/edit">Edit</a>
+                <h3 class="title is-5 has-text-centered">Do you really want to go?: <%= concert.done ? 'Yah' : 'Nah' %></h3>
             </p>
-            
-                <ul>
-                    <form action="/concerts/<%=concert._id%>?_method=DELETE" method="POST" class="delete-form">
-                      <button type="submit">X</button>
-                    </form>
-                    
-                </ul>
-                    <% }); %>
-                    <% } else { %>
-                    <p>There are no Concerts yet!</p>
+    </div>
+        <% }); %>
+        <% } else { %>         
+        <p class="title is-1 has-text-centered">No concerts, have you yet!</p>            
         <% } %>
-</body>
+    </div>
 </html>

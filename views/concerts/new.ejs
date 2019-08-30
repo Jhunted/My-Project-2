@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Add new concert info below:</h1>
+    <h1 class="has-text-centered title is-1 notification is-black">Add new concert info below:</h1>
+        <nav class="has-text-centered title is-4">
         <a href="/concerts">Go back to all concerts</a>
+        --
         <a href="/">Go Back Home</a>
-        <hr>
-
+        </nav>
+        <div class="has-text-centered">
     <form action="/concerts" method="POST" autocomplete="off">
-        <select name="name">
+        <select name="name" class="notification">
             <option value="Toyota Music Factory">Toyota Music Factory</option>
             <option value="Dos Equis Energy Pavilion">Dos Equis Energy Pavilion</option>
             <option value="Bomb Factory">Bomb Factory</option>
@@ -27,8 +32,9 @@
             <option value="Grand Prairie">Grand Prairie</option>
         </select>
         <input type="datetime-local" name="date">
-        <input type="submit" value="Add New Concert">
+        <input class="button is-link" type="submit" value="Add New Concert">
     </form>
+    </div>
    
 </body>
 </html>

@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
     <title>Create a New Ticket</title>
 </head>
 <body>
-    <h1>Add a new Ticket</h1>
+    <h1 class="has-text-centered title is-1 notification is-black">Add a Ticket</h1>
+    <nav class="has-text-centered title is-4">
     <a href="/">Go to Home Screen</a>
+    --
     <a href="/concerts/<%= concert._id %>">Back to Concert Details</a>
+    --
     <a href="/concerts">Back to all concerts</a>
-    <hr>
+    </nav>
+    <div class="has-text-centeredd">
     <form action="/concerts/<%= concert._id %>/tickets" method="POST">
+        <div class="has-text-centered">
+        <div class="title is-4">
+            Seat
         <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
+        </div>
+        <div class="title is-4">
+            Price
         <input type="number" name="price" min="0">
-        <input type="submit" value="Add Ticket">
+        </div>
+        <div>
+        <input type="submit" class="button is-link" value="Add Ticket">
+        </div>
     </form>
+    </div>
+</div>
 </body>
 </html>

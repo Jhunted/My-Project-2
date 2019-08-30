@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="stylesheets/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
-    <title>Document</title>
+
+    <title>Please Login</title>
 </head>
 <body>
-        <h1 class="has-text-centered title is-1 notification is-black">Edit</h1>
-        <form action="/concerts/<%= concert_id %>?_method=PUT" method="POST" autocomplete="off">
-          <div class="has-text-centered">
-          <label>
-            <input type="checkbox" name="done" <%= concert.done ? true : false %>>
-          </label>
-          <button class="button is-link" type="submit">Update Ticket</button>
-        </div>
-        </form>
+    <h3 class="has-text-centered title is-1 notification is-black">Please Login First Before Viewing This Page</h3>
+    <nav class="has-text-centered title is-4">
+    <a href="/auth/google">Login With Google</a>
+    --
+    <a href="/">Back to Home Page</a>
+    </nav>
 </body>
 </html>
